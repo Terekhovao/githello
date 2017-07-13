@@ -4,7 +4,14 @@
  var csso = require ('gulp-csso');
  var cssConcat = require ('gulp-concat-css');
  var rename = require ('gulp-rename');
+ var htmlmin = require('gulp-htmlmin');
  
+ gulp.task('server', function(){
+ 	connect.server({
+ 		root:'build/',
+ 		livereload:true;
+ 	});
+ });
 
  gulp.task('html', function(){
  	 gulp.src('dev/**/*.html')
@@ -28,5 +35,10 @@
  	}))
  	 .pipe(gulp.dest('build/css/mystyle.css'))
  	 .pipe(connect.reload());
+ })  
+
+
+ gulp.task("default", function(){
+ 	gulp.start(["server","html","css"]);
  })
 
