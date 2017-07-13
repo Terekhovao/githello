@@ -16,23 +16,26 @@
  gulp.task('html', function(){
  	 gulp.src('dev/**/*.html')
  	 .pipe(includer())
+ 	 .pipe(htmlmin({
+ 	 	collapseWhitespace:true,
+ 	 	removeComments:1
+ 	 	path.dirname = ''
+ 	 }))
  	 .pipe(rename(function(path){
  	 	path.dirname = ''
  	 }))
  	 .pipe(gulp.dest('build/'))
+ 	 .pipe(connect.reload());
  });
 
 
  gulp.task ('css', function (){
  	gulp.src('dev/assets/**/*.css')
- 	.pipe(cssConcat('css/style.css'))
+ 	.pipe(concat_css())
  	.pipe(csso())
  	.pipe(rename(function(path){
  	 	path.dirname = ''
  	 }))
- 	.pipe(rename(function(path){
- 		path.dirname = ''
- 	}))
  	 .pipe(gulp.dest('build/css/mystyle.css'))
  	 .pipe(connect.reload());
  })  
