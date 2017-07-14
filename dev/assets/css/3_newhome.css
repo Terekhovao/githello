@@ -1,0 +1,40 @@
+.container-newhome{
+	width: 100%;
+	max-width: 600px;
+	height:800px;
+	background-image: url(../../img/pic-newhome.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 0 auto;
+}
+.logo {
+	background-image: url(../../img/sprite1.png);
+	background-position: -86px -108px;
+	background-repeat: no-repeat;
+	width: 227px;
+	height: 182px;
+	margin: 0 auto;
+	display: inline-block;
+	margin: 27px 187px 32px 187px;
+}
+.bigger-title {
+	font-size: 60px;
+	color: #317db1;
+	margin-bottom: 40px;
+	text-align: center;
+}
+.blue{
+	color: #317db1;
+
+}
+.sub-title{
+	font-size: 24px;
+	color: #317db1;
+	text-align: center;
+}
+.footer-line.new {
+	margin-bottom: 10px;
+}
+.last {
+	margin-bottom: 80px;
+}

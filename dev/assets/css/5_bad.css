@@ -1,0 +1,41 @@
+.containe-bad {
+	max-width: 100%;
+}
+.picture-bad {
+	width: 100%;
+	max-width: 495px;
+	background-image: url(picture-bad.png);
+	background-position: center;
+	margin: 0 auto;
+	margin-bottom: 16px;
+}
+.big-title {
+	font-size:36px;
+	text-align: center;
+	margin-bottom: 14px;
+}
+.small-title {
+	font-size: 18px;
+	margin-bottom: 12px;
+	text-align: center;
+}
+.text {
+	margin: 0 14px 12px 9px;
+	text-align: justify; 
+}
+.footer-line {
+	height: 46px;
+	background-color: #2e7cb0;
+	width: 100%;
+	max-width: 590px;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	
+}
+.line {
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 46px; 
+	font-size: 18px;
+
+}

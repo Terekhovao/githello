@@ -9,7 +9,7 @@
  gulp.task('server', function(){
  	connect.server({
  		root:'build/',
- 		livereload:true;
+ 		livereload:true
  	});
  });
 
@@ -18,8 +18,7 @@
  	 .pipe(includer())
  	 .pipe(htmlmin({
  	 	collapseWhitespace:true,
- 	 	removeComments:1
- 	 	path.dirname = ''
+ 	 	removeComments:1,
  	 }))
  	 .pipe(rename(function(path){
  	 	path.dirname = ''
@@ -31,17 +30,25 @@
 
  gulp.task ('css', function (){
  	gulp.src('dev/assets/**/*.css')
- 	.pipe(concat_css())
- 	.pipe(csso())
+ 	.pipe(cssConcat('mystyle.css'))
+ 	// .pipe(csso())
  	.pipe(rename(function(path){
  	 	path.dirname = ''
  	 }))
- 	 .pipe(gulp.dest('build/css/mystyle.css'))
+ 	 .pipe(gulp.dest('build/css/'))
  	 .pipe(connect.reload());
  })  
 
-
+ 
  gulp.task("default", function(){
  	gulp.start(["server","html","css"]);
+
+ 	gulp.watch(['dev/**/*.html'], function(){
+        gulp.start(['html']);
+    });
+
+    gulp.watch(['dev/**/*.css'], function(){
+        gulp.start(['css']);
+    });
  })
 
